@@ -1,0 +1,234 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  line-height: 1.6;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #c2c5aa; /* sage */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7f4f24; /* russet */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #663f1d; /* russet-400 */
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #414833; /* ebony */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #a68a64; /* lion */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #b6ad90; /* khaki */
+}
+
+/* Selection styles */
+::selection {
+  background-color: #7f4f24; /* russet */
+  color: #f4d3b8; /* seal_brown-900 */
+}
+
+.dark ::selection {
+  background-color: #a68a64; /* lion */
+  color: #582f0e; /* seal_brown */
+}
+
+/* Custom Utility Classes using your new earth-toned palette */
+.btn-primary {
+  background: linear-gradient(135deg, #7f4f24, #936639); /* russet to raw_umber */
+  color: #f4d3b8; /* seal_brown-900 (cream tone) */
+  font-weight: 600;
+  padding: 0.625rem 1.5rem; /* Reduced padding for mobile */
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  box-shadow: 0 4px 14px 0 rgba(127, 79, 36, 0.25);
+  position: relative;
+  overflow: hidden;
+  font-size: 0.875rem; /* Smaller font for mobile */
+}
+
+@media (min-width: 640px) {
+  .btn-primary {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px 0 rgba(127, 79, 36, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  border: 2px solid #7f4f24; /* russet */
+  color: #7f4f24; /* russet */
+  background-color: transparent;
+  font-weight: 600;
+  padding: 0.625rem 1.5rem; /* Reduced padding for mobile */
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  font-size: 0.875rem; /* Smaller font for mobile */
+}
+
+@media (min-width: 640px) {
+  .btn-secondary {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+.btn-secondary:hover {
+  background-color: #7f4f24; /* russet */
+  color: #f4d3b8; /* cream */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px 0 rgba(127, 79, 36, 0.25);
+}
+
+.dark .btn-secondary {
+  border-color: #a68a64; /* lion */
+  color: #a68a64; /* lion */
+}
+
+.dark .btn-secondary:hover {
+  background-color: #a68a64; /* lion */
+  color: #333d29; /* black_olive */
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-padding {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.container-custom {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Mobile-specific utilities */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+/* Mobile text sizing */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 641px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Prevent text overflow and weird positioning */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ensure proper z-index stacking */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  z-index: 50;
+}
+
+/* Fix any positioning issues */
+.container-custom > * {
+  position: relative;
+  z-index: auto;
+}
