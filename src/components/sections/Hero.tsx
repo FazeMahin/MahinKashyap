@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Download, Mail, GraduationCap, Trophy } from 'lucide-react';
+import { ArrowDown, Mail, GraduationCap, Trophy } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { personalInfo } from '../../data/personal';
 import { Vortex } from '../ui/vortex';
@@ -78,20 +78,6 @@ const Hero: React.FC = () => {
                     Get In Touch
                   </motion.button>
                 </Link>
-
-                {personalInfo.resume && (
-                  <motion.a
-                    href={personalInfo.resume}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="btn-secondary flex items-center gap-2"
-                  >
-                    <Download size={20} />
-                    Download Resume
-                  </motion.a>
-                )}
               </motion.div>
             </div>
 
